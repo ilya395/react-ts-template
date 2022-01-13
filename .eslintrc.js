@@ -1,0 +1,44 @@
+module.exports = {
+  env: {
+    browser: true,
+  },
+  extends: ['airbnb', 'airbnb/hooks', 'react-app', 'prettier', 'prettier/react'],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 12,
+    sourceType: 'module',
+  },
+  plugins: ['prettier', 'prettier', 'react', '@typescript-eslint'],
+  rules: {
+    'react/prop-types': 'off',
+    '@typescript-eslint/no-unused-vars': 'error', // смотрим за не использованными переменными
+    'no-console': 'warn', // 'error'
+    'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx', '.ts', '.js'] }], // где используем jsx
+    'import/extensions': [
+      // не указываем расширения при импорте файлов
+      'error',
+      'ignorePackages',
+      {
+        ts: 'never',
+        tsx: 'never',
+        js: 'never',
+        jsx: 'never',
+      },
+    ],
+    'react/jsx-props-no-spreading': 'off', // потомучто деструкторизация - збс, и пропсы удобно прокидывать
+    camelcase: 'warn', // поомучто пременные в js и так горбатые, а стили хоть немного по бэму
+    'no-shadow': 'off',
+    'react-hooks/rules-of-hooks': 'warn', // Проверяем правила хуков -> лучше поставить error на будущее
+    'react-hooks/exhaustive-deps': 'warn', // Проверяем зависимости эффекта
+  },
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: 'webpack.config.js',
+      },
+    },
+  },
+};

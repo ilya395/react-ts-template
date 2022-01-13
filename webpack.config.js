@@ -38,6 +38,7 @@ const cssLoaders  = (extra) => {
       loader: MiniCssExtractPlugin.loader,
       options: {},
     },
+    'css-modules-typescript-loader?modules',
     'css-loader',
     // 'postcss-loader',
     {

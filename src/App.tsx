@@ -1,10 +1,12 @@
 import React from "react";
-import "./App.scss";
+import "./styles/styles.scss";
+import cn from "classnames";
+import s from "./App.module.scss";
 
 const App: React.FC = () => {
     return (
-        <div>
-            Это функциональный компонент! лол!
+        <div className={cn(s["main-title"])}>
+            Это функциональный компонент! лол!!
         </div>
     );
 }
