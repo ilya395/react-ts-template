@@ -2,7 +2,7 @@ module.exports = {
   env: {
     browser: true,
   },
-  extends: ['airbnb', 'airbnb/hooks', 'react-app', 'prettier', 'prettier/react'],
+  extends: ['airbnb', 'airbnb/hooks', 'react-app', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -11,7 +11,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['prettier', 'prettier', 'react', '@typescript-eslint'],
+  plugins: ['prettier', 'react', '@typescript-eslint'],
   rules: {
     'react/prop-types': 'off',
     '@typescript-eslint/no-unused-vars': 'error', // смотрим за не использованными переменными
@@ -33,6 +33,16 @@ module.exports = {
     'no-shadow': 'off',
     'react-hooks/rules-of-hooks': 'warn', // Проверяем правила хуков -> лучше поставить error на будущее
     'react-hooks/exhaustive-deps': 'warn', // Проверяем зависимости эффекта
+    "react/function-component-definition": [
+      2,
+      {
+        namedComponents: "arrow-function",
+        unnamedComponents: "arrow-function",
+      },
+    ],
+    'arrow-body-style': ['error', 'as-needed', {
+      requireReturnForObjectLiteral: false,
+    }],
   },
   settings: {
     'import/resolver': {
